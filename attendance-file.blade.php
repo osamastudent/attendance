@@ -193,9 +193,7 @@ Route::get('/attendance/reports', [AttendanceController::class, 'timeOut'])->nam
 
                 @php
                 // Fetch attendance for the logged-in user on the current date
-                $attendance = App\Models\Attendance::where('user_id', Auth::id())->orderBy("created_at",'desc')
-                
-                ->first();
+                $attendance = App\Models\Attendance::where('user_id', Auth::id())->orderBy("created_at",'desc')->first();
                 @endphp
 
                 @if ($attendance)
